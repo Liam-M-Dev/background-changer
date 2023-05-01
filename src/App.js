@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="heading">Background Colour Changer</h1>
+      <p>Click the button below to change the background</p>
+      <button id="backgroundBtn">click me</button>
     </div>
   );
+}
+
+const btn = document.querySelector("button");
+const body = document.querySelector("body");
+btn.addEventListener("click", colour_changer);
+body.style.backgroundColor = "";
+
+function colour_changer() {
+  
+
+  let r = Math.floor(Math.random() * 256);
+  let b = Math.floor(Math.random() * 256);
+  let g = Math.floor(Math.random() * 256);
+  
+  return body.style.backgroundColor = "rgb(" + r + "," + b + "," + g + ")";
 }
 
 export default App;
